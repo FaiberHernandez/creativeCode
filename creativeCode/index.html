@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js"
+        integrity="sha512-aVKKRRi/Q/YV+4mjoKBsE4x3H+BkegoM/em46NNlCqNTmUYADjBbeNefNxYV7giUp0VxICtqdrbqU7iVaeZNXA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js"
+        integrity="sha512-ElRFoEQdI5Ht6kZvyzXhYG9NqjtkmlkfYk0wr6wHxU9JEHakS7UJZNeml5ALk+8IKlU6jDgMabC3vkumRokgJA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <link rel="stylesheet" href="estilos.css">
+    <title>Hoja de vida</title>
+</head>
+
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <i class="fa-solid fa-code icon"></i>
+                creativeCode
+            </div>
+            <ul class="menu">
+                <li><a href="#">Sobre mí</a></li>
+                <li><a href="#">Experiencia Acádemica</a></li>
+                <li><a href="#">Habilidades</a></li>
+                <li><a href="#">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="hero">
+        <div class="hero container">
+            <div>
+                <h1>Hola, soy</h1>
+                <h1><span id="heroAutoTyping"></span></h1>
+                <h2>Si puedes imaginarlo, puedo crearlo.</h2>
+                <a href="#" type="button" class="btn-hero">Mi red social</a>
+            </div>
+            <div>
+                <img class="imgResponsive" src="img/typing-eric-cartman.gif" alt="Cartman esta tecleando">
+            </div>
+        </div>
+    </section>
+
+    <section id="about">
+        <div class="about container">
+            <div class="col-left">
+                <div class="card">
+                    <div class="cardTitle">
+                        <span class="ico red"></span>
+                        <span class="ico yellow"></span>
+                        <span class="ico green"></span>
+                    </div>
+                    <div class="cardImg">
+
+                    </div>
+                </div>
+            </div>
+            <div class="col-right">
+                <h1 class="sectionTitle">Acerca de mí</h1>
+                <h2>Desarrollador Front End</h2>
+                <p>Me describiría como alguien responsable, comprometido, disciplinado, ingenioso y ambicioso, dispuesto
+                    siempre a encontrar una solución creativa ante los problemas que aporte ese factor que marca la
+                    diferencia e innova, amante de las buenas experiencias de usuario, colaborando y pidiendo ayuda su
+                    equipo cuando es necesario.
+                </p>
+                <p> <span class="colouredText">Dexter</span>, del laboratorio de Dexter podría ser un personaje que me
+                    represente, comprometido con cada
+                    uno de sus experimentos, probando cosas nuevas cada vez que una idea surge en su mente y que, aunque
+                    su Hermana siempre destruya sus experimentos o se presente algún problema este no se da por vencido
+                    y sigue adelante reconstruyendo y mejorando sus experimentos.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="portafolio">
+        <div class="portafolio container">
+            <div class="portafolioCard">
+                <h1 class="sectionTitle">Experiencia Acádemica</h1>
+                <div class="card">
+                    <div class="cardTitle">
+                        <span class="ico red"></span>
+                        <span class="ico yellow"></span>
+                        <span class="ico green"></span>
+                    </div>
+                    <div class="cardBody">
+                        <ul class="tabs">
+                            <li id="papelPlot"><a href="#"> <i class="fa-solid fa-paperclip"></i> <span>papelPlot</span>
+                                </a></li>
+                            <li id="interprete"><a href="#"><i class="fa-solid fa-code"></i> <span>intérprete</span>
+                                </a></li>
+                            <li id="expec"><a href="#"><i class="fa-solid fa-user-tie"></i>
+                                    <span>Expectativas</span></a></li>
+                        </ul>
+                        <div id="portafolioContent">
+                            <h1 id="portafolioTitle">PapelPlot</h1>
+                            <p id="portalofioDescription"></p>
+                            <a href="#" target="_blank" id="portafolioLink" class="btn-hero"> Visitar Sitio</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <section id="skills">
+        <div class="skills container">
+            <div class="col-left">
+                <h1 class="sectionTitle">Habilidades</h1>
+                <h2>Keep Learning</h2>
+                <p>A continuación se muestra una gráfica en que ilustra de manera subjetiva mis habilidades en materia
+                    de
+                    lenguajes de programación y habilidades a fines con el perfil de un <span
+                        class="colouredText">Desarrollador Front End.</span>
+                </p>
+                <a href="#" target="_blank" id="programing" class="btn-hero"> Programación</a>
+                <a href="#" target="_blank" id="design" class="btn-hero"> Diseño</a>
+            </div>
+            <div class="col-right">
+                <div class="card">
+                    <div class="cardTitle">
+                        <span class="ico red"></span>
+                        <span class="ico yellow"></span>
+                        <span class="ico green"></span>
+                    </div>
+                    <div class="cardBody">
+                        <div class="chart">
+                            <canvas id="myChart"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+
+    </footer>
+
+</body>
+<script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+<script src="app.js"></script>
+
+</html>
