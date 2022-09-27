@@ -65,9 +65,9 @@ var config1 = {
     options: {
         plugins: {
             legend: {
-              labels: {
-                color: 'white',
-              },
+                labels: {
+                    color: 'white',
+                },
             }
         },
         elements: {
@@ -102,9 +102,9 @@ var config2 = {
     options: {
         plugins: {
             legend: {
-              labels: {
-                color: 'white',
-              },
+                labels: {
+                    color: 'white',
+                },
             }
         },
         elements: {
@@ -139,21 +139,21 @@ var myChart = new Chart(
 );
 
 $(function () {
-    
-    $("#programing").click(function (e) { 
+
+    $("#programing").click(function (e) {
         e.preventDefault();
         $(".chart").empty();
-        $(".chart").append('<canvas id="myChart"></canvas>');
+        $(".chart").append('<canvas id="myChart"  alt = "Gráfica de habilidades"></canvas>');
         myChart = new Chart(
             $("#myChart"),
             config1
         );
     });
 
-    $("#design").click(function (e) { 
+    $("#design").click(function (e) {
         e.preventDefault();
         $(".chart").empty();
-        $(".chart").append('<canvas id="myChart"></canvas>');
+        $(".chart").append('<canvas id="myChart" alt = "Gráfica de habilidades"></canvas>');
         myChart = new Chart(
             $("#myChart"),
             config2
@@ -180,7 +180,7 @@ var papelPlot = {
 
 var interprete = {
     "title": " Intérprete en Pyhton.",
-    "description": "Otro de los proyectos en los que he trabajo a nivel académico es el de Un Intérprete escrito en Python desplegado en la web usando Django. <br> En este trabaje puramente en el Front End, dando lujo de detalle a la interfaz de la página, orientándola a los desarrolladores y llevando lo retro a lo moderno con un diseño que puede recordar a los viejos compiladores y un monitor CRT de fosforo verde. Este incorpora multilenguaje y un TTS para el narrado por voz para algunos mensajes emergentes. <br> Al final resultó ser un proyecto enriquecedor en el que afiancé mis conocimientos y aprendí más, así mismo mejoré el uso Frameworks como Bootstrap, te invitó y visitar la página web dando click en el botón de abajo. <br>",
+    "description": "Otro de los proyectos en los que he trabajado a nivel académico es el de un Intérprete escrito en Python desplegado en la web usando Django. <br> En este mi rol fue puramente en el Front End, orientándola a los desarrolladores y llevando lo retro a lo moderno con un diseño que puede recordar a los viejos compiladores y un monitor CRT de fosforo verde. Este incorpora multilenguaje y un TTS para el narrado por voz de algunos mensajes emergentes. <br> Al final resultó ser un proyecto enriquecedor en el que afiancé mis conocimientos y aprendí más, así mismo mejoré el uso Frameworks como Bootstrap, te invito a visitar la página web dando click en el botón de abajo. <br>",
     "link": "https://interprete-sencillo.herokuapp.com/"
 }
 
@@ -268,3 +268,59 @@ function changePortafolioContent(tab) {
 
 }
 //End portafolio data changer
+
+//Form label animation
+const inputs = document.querySelectorAll(".input");
+
+function focusInput() {
+    let parent = this.parentNode;
+    parent.classList.add("focus");
+}
+
+function blurInput() {
+    let parent = this.parentNode;
+    if (this.value == "") {
+        parent.classList.remove("focus");
+    }
+    if($(this).val().trim() == ""){
+        $(this).val("");
+    }
+   
+}
+
+inputs.forEach((input) => {
+    input.addEventListener("focus", focusInput);
+    input.addEventListener("blur", blurInput);
+});
+
+//End Form label animation
+
+//validating form fields and show pop up
+
+$(function () {
+    $("#contactForm").submit(function (e) {
+        e.preventDefault();
+        let msg = $("#mensaje").val();
+        console.log(msg);
+        $("#msg").text(msg);
+        showPopup();
+        $("#asunto").val("");
+        $("#correo").val("");
+        $("#mensaje").val("");
+    });
+
+    $("#closepop").click(function(e){
+        e.preventDefault();
+        $('.pop-up').removeClass('show');
+        $('.pop-up-wrap').removeClass('show');
+    });
+});
+
+function showPopup() {
+    $('.pop-up').addClass('show');
+    $('.pop-up-wrap').addClass('show');
+}
+
+//End validating form fields
+
+//Pop up 

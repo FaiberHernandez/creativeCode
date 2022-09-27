@@ -13,13 +13,13 @@
         integrity="sha512-ElRFoEQdI5Ht6kZvyzXhYG9NqjtkmlkfYk0wr6wHxU9JEHakS7UJZNeml5ALk+8IKlU6jDgMabC3vkumRokgJA=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <link rel="stylesheet" href="estilos.css">
-    <title>Hoja de vida</title>
+    <title>creativeCode</title>
 </head>
 
 <body>
-    <header>
+    <header title="header">
         <nav class="navbar">
-            <div class="logo">
+            <div class="logo" title="logotipo de creativeCode">
                 <i class="fa-solid fa-code icon"></i>
                 creativeCode
             </div>
@@ -41,7 +41,7 @@
                 <a href="#" type="button" class="btn-hero">Mi red social</a>
             </div>
             <div>
-                <img class="imgResponsive" src="img/typing-eric-cartman.gif" alt="Cartman esta tecleando">
+                <img class="imgResponsive" src="img/typing-eric-cartman.gif" alt="Foto de Faiber Hernández">
             </div>
         </div>
     </section>
@@ -55,8 +55,7 @@
                         <span class="ico yellow"></span>
                         <span class="ico green"></span>
                     </div>
-                    <div class="cardImg">
-
+                    <div class="cardImg" title="Dexter del laboratorio de Dexter">
                     </div>
                 </div>
             </div>
@@ -130,13 +129,74 @@
                     </div>
                     <div class="cardBody">
                         <div class="chart">
-                            <canvas id="myChart"></canvas>
+                            <canvas id="myChart" alt="Gráfica de habilidades"></canvas>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
+
+    <section id="contact">
+        <div class="contact container">
+            <div class="contactForm">
+                <div class="card">
+                    <div class="cardTitle">
+                        <span class="ico red"></span>
+                        <span class="ico yellow"></span>
+                        <span class="ico green"></span>
+                    </div>
+                    <div class="cardBody">
+                        <form action="index.html" id="contactForm">
+                            <h2 class="title"> Contáctame</h2>
+                            <div class="inputContainer">
+                                <input type="text" name="Asunto" id="asunto" class="input" required>
+                                <label for="Asunto">Asunto</label>
+                                <span>Asunto</span>
+                            </div>
+                            <div class="inputContainer">
+                                <input type="email" name="Correo" id="correo" class="input" required>
+                                <label for="correo">Correo de contacto</label>
+                                <span>Correo de contacto</span>
+                            </div>
+                            <div class="inputContainer textArea">
+                                <textarea name="Mensaje" id="mensaje" class="input" required></textarea>
+                                <label for="mensaje">Mensaje</label>
+                                <span>Mensaje</span>
+                            </div>
+                            <input type="submit" class="btn-hero" id="submitBtn">
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+            <div class="contactInfo">
+                <h1>Contáctame</h1>
+                <h2>Contestaré lo más pronto posible <i class="fa-regular fa-face-laugh-beam"></i></h2>
+            </div>
+
+        </div>
+    </section>
+
+    <div class="pop-up">
+        <div class="pop-up-wrap">
+            <div class="card">
+                <div class="cardTitle">
+                    <span class="ico red"></span>
+                    <span class="ico yellow"></span>
+                    <span class="ico green"></span>
+                </div>
+                <div class="cardBody">
+                    <h1>Su mensaje es:</h1>
+                    <div class="popContent">
+                        <p id="msg">Mensaje</p>
+                    </div>
+                    <a href="#" class="btn-hero" id="closepop"> OK</a>
+                </div>
+            </div>
+
+        </div>
+    </div>
 
     <footer>
 
