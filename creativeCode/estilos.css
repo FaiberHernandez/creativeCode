@@ -4,6 +4,7 @@
     --primaryColor: #fff;
     --secondaryColor: #000;
     --tertiaryColor: #0fec2a;
+    --bgFnH: #24262b;
 }
 
 html,
@@ -32,6 +33,12 @@ p {
     letter-spacing: 0.05rem;
 }
 
+
+.logo {
+    font-size: 2rem;
+    color: var(--primaryColor);
+    font-weight: 100;
+}
 
 .icon {
     color: var(--tertiaryColor);
@@ -87,8 +94,8 @@ p {
 }
 
 .btn-hero:hover {
-    color: var(--primaryColor);
-    background-color: var(--tertiaryColor);
+    color: var(--tertiaryColor);
+    background-color: var(--secondaryColor);
 }
 
 .card {
@@ -159,53 +166,146 @@ p {
 }
 
 /*Fixed Header*/
-.navbar {
-    z-index: 2;
-    position: fixed;
-    width: 100%;
-    font-size: 1.2rem;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 25px;
-    transition: all 0.5s ease;
+#header {
+	position: fixed;
+	z-index: 1200;
+	left: 0;
+	top: 0;
+	width: 100vw;
+	height: auto;
 }
 
-header .hero {
-    display: flex;
-    width: 100%;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    text-align: center;
+#header .header {
+	min-height: 8vh;
+	background-color: var(--bgFnH);
+	transition: 0.3s ease background-color;
 }
 
-.logo {
-    font-size: 2.5rem;
-    color: var(--primaryColor);
-    font-weight: 100;
+#header .nav-bar {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	width: 100%;
+	height: 100%;
+	max-width: 1300px;
+	padding: 0 10px;
 }
 
-.menu {
-    display: flex;
+#header .nav-list ul {
+	list-style: none;
+	position: absolute;
+	background-color: rgb(31, 30, 30);
+	width: 100vw;
+	height: 100vh;
+	left: 100%;
+	top: 0;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	z-index: 1;
+	overflow-x: hidden;
+	transition: 0.5s ease left;
 }
 
-.menu li {
-    list-style: none;
-    margin: 10px;
+#header .nav-list ul.active {
+	left: 0%;
 }
 
-.menu li a {
-    color: var(--primaryColor);
-    font-weight: bold;
-    transition: all 0.5s ease;
+#header .nav-list ul a {
+	font-size: 2.5rem;
+	font-weight: 500;
+	letter-spacing: 0.2rem;
+	text-decoration: none;
+	color: var(--primaryColor);
+	text-transform: capitalize;
+	padding: 20px;
+	display: block;
 }
 
-.menu li a:hover {
-    padding: 5px 10px;
+#header .nav-list ul a::after {
+	content: attr(data-after);
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%) scale(0);
+	color: rgba(240, 248, 255, 0.021);
+	font-size: 13rem;
+	letter-spacing: 50px;
+	z-index: -1;
+	transition: 0.3s ease letter-spacing;
+}
+
+#header .nav-list ul li:hover a::after {
+	transform: translate(-50%, -50%) scale(1);
+	letter-spacing: initial;
+}
+
+#header .nav-list ul li:hover a {
     color: var(--tertiaryColor);
 }
 
+#header .hamburger {
+	height: 60px;
+	width: 60px;
+	display: inline-block;
+	border: 3px solid var(--primaryColor);
+	border-radius: 50%;
+	position: relative;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	z-index: 100;
+	cursor: pointer;
+	transform: scale(0.8);
+	margin-right: 20px;
+}
+
+#header .hamburger:after {
+	position: absolute;
+	content: '';
+	height: 100%;
+	width: 100%;
+	border-radius: 50%;
+	border: 3px solid var(--primaryColor);
+	animation: hamburger_puls 1s ease infinite;
+}
+
+#header .hamburger .bar {
+	height: 2px;
+	width: 30px;
+	position: relative;
+	background-color: var(--primaryColor);
+	z-index: -1;
+}
+
+#header .hamburger .bar::after,
+#header .hamburger .bar::before {
+	content: '';
+	position: absolute;
+	height: 100%;
+	width: 100%;
+	left: 0;
+	background-color: var(--primaryColor);
+	transition: 0.3s ease;
+	transition-property: top, bottom;
+}
+
+#header .hamburger .bar::after {
+	top: 8px;
+}
+
+#header .hamburger .bar::before {
+	bottom: 8px;
+}
+
+#header .hamburger.active .bar::before {
+	bottom: 0;
+}
+
+#header .hamburger.active .bar::after {
+	top: 0;
+}
 /*End Fixed Header*/
 
 /*Hero section*/
@@ -256,8 +356,13 @@ header .hero {
 
 .imgResponsive {
     margin: 20px;
-    max-height: 250px;
+    height: 300px;
+    width: 300px;
+    background: url(img/faiberPortrait1.jpeg);
+    background-size: cover;
+    background-position: right center;
     border-radius: 50%;
+
 }
 
 /*End hero section*/
@@ -395,7 +500,7 @@ header .hero {
 }
 
 #skills .cardBody {
-    background-color: #132d46;
+    background-color: var(--bgFnH);
 }
 
 #skills .btn-hero {
@@ -635,7 +740,103 @@ header .hero {
 
 /*End Contact Section*/
 
-footer {}
+/* Footer Section*/
+
+.row {
+	display: flex;
+	flex-wrap: wrap;
+}
+
+footer ul {
+	list-style: none;
+}
+
+footer .container{
+    min-height: fit-content
+}
+
+.footer {
+	background-color: var(--bgFnH);
+	padding: 70px 0;
+}
+
+.footer-col {
+	width: 25%;
+	padding: 0 15px;
+}
+
+.footer-col h4 {
+	font-size: 18px;
+	color: var(--primaryColor);
+	text-transform: capitalize;
+	margin-bottom: 35px;
+	font-weight: 500;
+	position: relative;
+}
+
+.footer-col h4::before {
+	content: '';
+	position: absolute;
+	left: 0;
+	bottom: -10px;
+	background-color: var(--tertiaryColor);
+	height: 2px;
+	box-sizing: border-box;
+	width: 50px;
+}
+
+.footer-col ul li:not(:last-child) {
+	margin-bottom: 10px;
+}
+
+.footer-col ul li{
+	font-size: 16px;
+	text-transform: capitalize;
+	color: #ffffff;
+	text-decoration: none;
+	font-weight: 300;
+	color: #bbbbbb;
+	display: block;
+	transition: all 0.3s ease;
+}
+
+.footer-col ul li:hover {
+	color: #ffffff;
+	padding-left: 8px;
+}
+
+.footer-col .social-links a {
+	display: inline-block;
+	height: 40px;
+	width: 40px;
+	background-color: rgba(255, 255, 255, 0.2);
+	margin: 0 10px 10px 0;
+	text-align: center;
+	line-height: 40px;
+	border-radius: 50%;
+	color: var(--tertiaryColor);
+	transition: all 0.5s ease;
+}
+
+.footer-col .social-links a:hover {
+	color: var(--bgFnH);
+	background-color: var(--tertiaryColor);
+}
+
+/*responsive*/
+@media(max-width: 767px) {
+	.footer-col {
+		width: 50%;
+		margin-bottom: 30px;
+	}
+}
+
+@media(max-width: 574px) {
+	.footer-col {
+		width: 100%;
+	}
+}
+/*End footer Section
 
 
 /* Media Query For Tablet */
@@ -708,8 +909,29 @@ footer {}
     #hero .hero {
         flex-direction: row;
     }
-
     /*End hero section */
+
+    /* header */
+	#header .hamburger {
+		display: none;
+	}
+	#header .nav-list ul {
+		position: initial;
+		display: block;
+		height: auto;
+		width: fit-content;
+		background-color: transparent;
+	}
+	#header .nav-list ul li {
+		display: inline-block;
+	}
+	#header .nav-list ul li a {
+		font-size: 1.1rem;
+	}
+	#header .nav-list ul a:after {
+		display: none;
+	}
+	/* End header */
 }
 
 /* End  Media Query For Desktop */
@@ -732,13 +954,9 @@ footer {}
     #hero .btn-hero {
         font-size: 1.2rem;
     }
-
+    
     .logo {
         font-size: 1.5rem;
-    }
-
-    .navbar ul {
-        display: none;
     }
 
 }

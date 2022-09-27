@@ -13,23 +13,33 @@
         integrity="sha512-ElRFoEQdI5Ht6kZvyzXhYG9NqjtkmlkfYk0wr6wHxU9JEHakS7UJZNeml5ALk+8IKlU6jDgMabC3vkumRokgJA=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <link rel="stylesheet" href="estilos.css">
+    <link rel="shortcut icon" href="img/pageIcon.png" type="image/x-icon">
     <title>creativeCode</title>
 </head>
 
 <body>
-    <header title="header">
-        <nav class="navbar">
-            <div class="logo" title="logotipo de creativeCode">
-                <i class="fa-solid fa-code icon"></i>
-                creativeCode
+
+    <header id="header">
+        <div class="header container">
+            <div class="nav-bar">
+                <div class="logo" title="logo de Creative Code letras code en verde neón.">
+                    <i class="fa-solid fa-code icon"></i>
+                    creative<span class="colouredText">Code</span>
+                </div>
+                <div class="nav-list">
+                    <div class="hamburger">
+                        <div class="bar"></div>
+                    </div>
+                    <ul>
+                        <li><a href="#hero" data-after="Inicio">Inicio</a></li>
+                        <li><a href="#about" data-after="Acerca de mí">Acerca de mí</a></li>
+                        <li><a href="#portafolio" data-after="Experiencia">Experiencia</a></li>
+                        <li><a href="#skills" data-after="Habilidades">Habilidades</a></li>
+                        <li><a href="#contact" data-after="Contáctame">Contáctame</a></li>
+                    </ul>
+                </div>
             </div>
-            <ul class="menu">
-                <li><a href="#">Sobre mí</a></li>
-                <li><a href="#">Experiencia Acádemica</a></li>
-                <li><a href="#">Habilidades</a></li>
-                <li><a href="#">Contacto</a></li>
-            </ul>
-        </nav>
+        </div>
     </header>
 
     <section id="hero">
@@ -38,10 +48,10 @@
                 <h1>Hola, soy</h1>
                 <h1><span id="heroAutoTyping"></span></h1>
                 <h2>Si puedes imaginarlo, puedo crearlo.</h2>
-                <a href="#" type="button" class="btn-hero">Mi red social</a>
+                <a href="https://www.facebook.com/FaiberHS" target="_blank" type="button" class="btn-hero">Sígueme</a>
             </div>
             <div>
-                <img class="imgResponsive" src="img/typing-eric-cartman.gif" alt="Foto de Faiber Hernández">
+                <div class="imgResponsive"></div>
             </div>
         </div>
     </section>
@@ -198,12 +208,52 @@
         </div>
     </div>
 
-    <footer>
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
 
+                <div class="footer-col">
+                    <h4> <i class="fa-solid fa-map-location-dot"></i> Dirección</h4>
+                    <ul>
+                        <li>Santa Marta</li>
+                        <li>Departamento del Magdalena</li>
+                        <li>Colombia</li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h4><i class="fa-solid fa-at"></i> Correo</h4>
+                    <ul>
+                        <li>faiberhh@gmail.com</li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h4><i class="fa-solid fa-mobile"></i> Celular</h4>
+                    <ul>
+                        <li>3014314071</li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h4><i class="fa-solid fa-circle-user"></i> Redes</h4>
+                    <div class="social-links">
+                        <a href="https://www.facebook.com/FaiberHS" target="_blank"><i
+                                class="fab fa-facebook-f"></i></a>
+                        <a href="https://api.whatsapp.com/send/?phone=573014314071&text=Keep+Learning&type=phone_number&app_absent=0"
+                            target="_blank"><i class="fab fa-whatsapp"></i></a>
+                        <a href="https://www.instagram.com/xeros_facto/" target="_blank"><i
+                                class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
     </footer>
 
 </body>
+
 <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+
 <script src="app.js"></script>
 
 </html>
